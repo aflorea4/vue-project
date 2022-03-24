@@ -17,16 +17,12 @@ export default {
   },
   methods: {
     switchLang() {
-      let lang =
-        window.localStorage.getItem("lang") != null
-          ? window.localStorage.getItem("lang")
-          : "ro";
-      if (lang === "ro") {
+      if (window.localStorage.getItem("lang") == "ro") {
         window.localStorage.setItem("lang", "en");
-        return;
+      } else {
+        window.localStorage.setItem("lang", "ro");
       }
-      window.localStorage.setItem("lang", "ro");
-      location.reload();
+      window.location.reload();
     },
   },
 };
